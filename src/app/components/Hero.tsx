@@ -1,8 +1,10 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import Searchcomponent from './Searchcomponent';
 
 const HeroSection = () => {
+
   return (
-    <section className="bg-gradient-to-r  from-gray-900 via-black to-gray-900 text-gray-200">
+    <section className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center py-16 lg:py-24">
         {/* Content Section */}
         <div className="lg:w-1/2 text-center lg:text-left">
@@ -38,8 +40,9 @@ const HeroSection = () => {
           />
         </div>
       </div>
+      <Searchcomponent  />
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
