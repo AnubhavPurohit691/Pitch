@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useRef, useState } from "react";
 import SearchFormreset from "./SearchFormreset";
 import { Search } from "lucide-react";
+import { title } from "process";
+import StartupCard from "./StartupCard";
 
 const Searchcomponent = () => {
   const router = useRouter();
@@ -13,6 +15,7 @@ const Searchcomponent = () => {
   const currentQuery = searchParams.get("q") || "";
   const [searchValue, setSearchValue] = useState(currentQuery);
   const refer = useRef<HTMLInputElement>(null);
+
 
   const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent page reload
@@ -30,6 +33,29 @@ const Searchcomponent = () => {
     setSearchValue("");
     refer.current?.focus();
   };
+
+  const posts=[
+    {
+      _createdAt:(new Date()).toLocaleDateString(),
+      views:55,
+      author:{_id:1,name:"Anubhav purohit"},
+      _id:1,
+      description:"This is a description",
+      image:'',
+      category:"Robots",
+      title:"we Robots"
+    },
+    {
+      _createdAt:(new Date()).toLocaleDateString(),
+      views:55,
+      author:{_id:1,name:"Anubhav purohit"},
+      _id:2,
+      description:"This is a description",
+      image:'',
+      category:"Robots",
+      title:"we Robots"
+    },
+  ]
 
   return (
     <>
@@ -63,6 +89,11 @@ const Searchcomponent = () => {
             ? `Showing results for "${searchValue}"`
             : "Showing all startups"}
         </p>
+        <ul className="mt-7 grid md:grid-cols-3 sm:grid col-2 gap-5">
+            {posts.length>0?posts.map((posts)=>{
+              return <StartupCard key={posts?._id} posts={posts} />
+            }):<Search/>}
+        </ul>
       </section>
     </>
   );

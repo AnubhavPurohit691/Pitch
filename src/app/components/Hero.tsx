@@ -16,18 +16,7 @@ const HeroSection = () => {
             <p className="mt-6 text-lg text-gray-300 leading-relaxed">
               Join a vibrant community of innovators. Showcase your startup, collaborate with like-minded individuals, and turn your ideas into reality.
             </p>
-            <div className="mt-8 flex justify-center lg:justify-start space-x-4">
-              <Link href="/join">
-                <div className="px-6 py-3 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600 transition">
-                  Get Started
-                </div>
-              </Link>
-              <Link href="/learn-more">
-                <div className="px-6 py-3 bg-gray-700 text-white rounded-md shadow-md hover:bg-gray-600 transition">
-                  Learn More
-                </div>
-              </Link>
-            </div>
+            
           </div>
 
           {/* Image Section */}
@@ -50,7 +39,7 @@ const HeroSection = () => {
           <p className="text-gray-600 mb-6">
             Discover the most innovative startups and connect with their founders.
           </p>
-          <div className="max-w-3xl mx-auto">
+          <div className=" mx-auto">
             <Searchcomponent />
           </div>
         </div>
