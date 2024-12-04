@@ -27,12 +27,14 @@ const StartupCard: React.FC<{ posts: Post }> = ({ posts }) => {
         {!posts.image && <div className="text-gray-600 text-lg font-medium">No Image Available</div>}
       </div>
       <div className="px-6 py-4">
+        <Link href={"/"}>
         <h2 className="font-bold text-gray-900 text-2xl mb-2">{posts.title}</h2>
         <p className="text-gray-600 text-sm mb-4">{posts.description}</p>
+        </Link>
         <Link href={`/user/${posts.author._id}`} className="text-gray-500 text-sm italic">By: <span className="font-medium text-gray-800">{posts.author.name}</span></Link>
      </div>
       <div className="px-6 pt-4 pb-6">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex justify-between">
           <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
             {posts.category}
           </span>

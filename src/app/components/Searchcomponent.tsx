@@ -26,14 +26,13 @@ const Searchcomponent = () => {
       sp.delete("q"); // Remove the query if the input is cleared
     }
     router.push(`/?${sp.toString()}`); // Update the URL without reloading
-    refer.current?.scrollIntoView({ behavior: "smooth" }); // Scroll to input field
   };
 
   const handleReset = () => {
     setSearchValue("");
     refer.current?.focus();
   };
-
+  
   const posts=[
     {
       _createdAt:(new Date()).toLocaleDateString(),
