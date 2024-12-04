@@ -52,7 +52,7 @@ const Searchcomponent = () => {
       description:"This is a description",
       image:'',
       category:"Robots",
-      title:"we Robots"
+      title:"we Robots",
     },
   ]
 
